@@ -11,10 +11,12 @@ class User
   end
 
   def update user_data
-    @id = user_data[:id]
-    @email = user_data[:email]
-    @forename = user_data[:forename]
-    @surname = user_data[:surname]
+    if user_data[:id] then @id = user_data[:id] end
+    if user_data[:email] then @email = user_data[:email] end
+    if user_data[:forename] then @forename = user_data[:forename] end
+    if user_data[:surname] then @surname = user_data[:surname] end
+    @updated = Time.now
+    self.dup
   end
 
   def get_id
@@ -39,6 +41,6 @@ class User
   end
 
   def get_updated
-    @updated ? @updated.dup : nil
+    @updated
   end
 end

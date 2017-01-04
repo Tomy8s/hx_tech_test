@@ -76,10 +76,12 @@ describe User do
     it 'should set @update to current time' do
       time_updated = Time.now
       allow(Time).to receive(:now).and_return(time_updated)
+      subject.update({})
       expect(subject.get_email).to eq email
       expect(subject.get_forename).to eq forename.capitalize
       expect(subject.get_surname).to eq surname.capitalize
-      expect(subject.get_updated).to be time_updated
+      expect(subject.get_updated).to eq time_updated
+      p subject
     end
   end
 
