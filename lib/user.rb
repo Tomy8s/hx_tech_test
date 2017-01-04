@@ -19,6 +19,18 @@ class User
     self.dup
   end
 
+  def display_json
+    hash = {
+      id: get_id,
+      email: get_email,
+      forename: get_forename,
+      surname: get_surname,
+      created: get_created,
+      updated: get_updated
+    }
+    hash.to_json
+  end
+
   def get_id
     return_id = @id
     return_id
