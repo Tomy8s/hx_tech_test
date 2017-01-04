@@ -3,7 +3,8 @@ require 'spec_helper'
 describe User do
   let(:email) { 'test@test.com' }
   let(:forename) { 'tom' }
-  let(:subject) { User.new({email: email, forename: forename}) }
+  let(:surname) { 'yates' }
+  let(:subject) { User.new({email: email, forename: forename, surname: surname}) }
   describe '#get_id' do
     it 'should return an integer as an id' do
       expect(subject.get_id).to be_a Fixnum
@@ -17,9 +18,15 @@ describe User do
     end
   end
 
-  describe '#forename' do
+  describe '#get_forename' do
     it 'should return a capitalize version of the given forename' do
       expect(subject.get_forename).to eq forename.capitalize
+    end
+  end
+
+  describe '#get_surname' do
+    it 'should return a capitalize version of the given surname' do
+      expect(subject.get_surname).to eq surname.capitalize
     end
   end
 end
