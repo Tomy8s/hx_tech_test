@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'json'
 require_relative 'user.rb'
+require_relative 'users.rb'
 
 class SUPAAPI < Sinatra::Base
   get '/' do
@@ -8,12 +9,12 @@ class SUPAAPI < Sinatra::Base
   end
 
   get '/new' do
-    $user = User.new(params)
+    Users.create(params)
     redirect '/get'
   end
 
   get '/get' do
-    $user.display_json
+    Users.return_user
   end
 
   # start the server if ruby file executed directly
