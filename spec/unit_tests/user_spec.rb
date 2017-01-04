@@ -51,5 +51,17 @@ describe User do
       subject.update({email: new_email})
       expect(subject.get_email).to eq new_email
     end
+
+    it 'should update the forename' do
+      new_forename = 'john'
+      subject.update({forename: new_forename})
+      expect(subject.get_forename).to eq new_forename.capitalize
+    end
+
+    it 'should update the surname' do
+      new_surname = 'smith'
+      subject.update({surname: new_surname})
+      expect(subject.get_surname).to eq new_surname.capitalize
+    end
   end
 end
