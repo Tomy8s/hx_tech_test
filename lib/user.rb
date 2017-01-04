@@ -37,4 +37,8 @@ class User
   def get_created
     @created.dup
   end
+
+  def get_updated
+    @updated ? @updated.dup : nil
+  end
 end
