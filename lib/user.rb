@@ -13,6 +13,8 @@ class User
   def update user_data
     @id = user_data[:id]
     @email = user_data[:email]
+    @forename = user_data[:forename]
+    @surname = user_data[:surname]
   end
 
   def get_id
