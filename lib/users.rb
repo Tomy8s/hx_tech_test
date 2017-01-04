@@ -5,16 +5,19 @@ class Users
   end
 
   def self.return_user(id=false)
-    if id
+    if @@user_list.empty?
+      'not found'
+    elsif id
       @@user_list.each do |u|
+        found = false
         if u.get_id == id
           return u.display_json
         end
       end
+      'not found'
     else
-      return @@user_list.last.display_json
+      @@user_list.last.display_json
     end
-    # 'not found'
   end
 
   def self.update_user(user_data)
@@ -25,5 +28,15 @@ class Users
       end
     end
     'not found'
+  end
+
+  def self.delete_user(id)
+    @@user_list.each do |u|
+      if u.get_id == id
+        @@user_list.delete(u)
+        return true
+      end
+    end
+    false
   end
 end

@@ -33,8 +33,9 @@ class SUPAAPI < Sinatra::Base
   get '/delete' do
     if !params[:id]
       'please specify an id'
+    elsif Users.delete_user(params[:id].to_i)
+      'deleted'
     else
-      Users.delet_user(params)
       redirect "/get?id=#{params[:id]}"
     end
   end

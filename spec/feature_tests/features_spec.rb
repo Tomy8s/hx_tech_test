@@ -31,7 +31,7 @@ describe 'deleting an entry' do
     visit 'http://localhost:4567/get?id=2'
     expect(page).to have_content '{"id":2,"email"'
     visit 'http://localhost:4567/delete?id=2'
-    expect(page).to have_content 'entry deleted'
+    expect(page).to have_content 'deleted'
     visit 'http://localhost:4567/get?id=2'
     expect(page).to have_content 'not found'
   end
