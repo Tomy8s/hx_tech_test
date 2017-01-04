@@ -63,6 +63,12 @@ describe User do
       subject.update({surname: new_surname})
       expect(subject.get_surname).to eq new_surname.capitalize
     end
+
+    it 'should set @update to current time' do
+      time_updated = Time.now
+      allow(Time).to receive(:now).and_return(time_updated)
+      expect(subject.get_updated).to be time_updated
+    end
   end
 
   describe '#get_updated' do
