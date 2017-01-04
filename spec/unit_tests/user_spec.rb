@@ -38,4 +38,12 @@ describe User do
       expect(subject.get_created).to eq time_created
     end
   end
+
+  describe '#update' do
+    it 'should update the id' do
+      new_id = rand 1000
+      subject.update({id: new_id})
+      expect(subject.get_id).to eq new_id
+    end
+  end
 end
