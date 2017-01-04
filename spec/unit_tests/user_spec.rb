@@ -45,5 +45,11 @@ describe User do
       subject.update({id: new_id})
       expect(subject.get_id).to eq new_id
     end
+
+    it 'should update the email' do
+      new_email = 'test2@test2.com'
+      subject.update({email: new_email})
+      expect(subject.get_email).to eq new_email
+    end
   end
 end
