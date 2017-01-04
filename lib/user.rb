@@ -6,6 +6,7 @@ class User
     @id = @@registered_users
     @email = user_data[:email]
     @forename = user_data[:forename]
+    @surname = user_data[:surname]
   end
 
   def get_id
@@ -19,5 +20,9 @@ class User
 
   def get_forename
     @forename.dup.capitalize
+  end
+
+  def get_surname
+    @surname.dup.capitalize
   end
 end
