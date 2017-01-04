@@ -5,6 +5,7 @@ describe User do
   let(:forename) { 'tom' }
   let(:surname) { 'yates' }
   let(:subject) { User.new({email: email, forename: forename, surname: surname}) }
+
   describe '#get_id' do
     it 'should return an integer as an id' do
       expect(subject.get_id).to be_a Fixnum
@@ -27,6 +28,14 @@ describe User do
   describe '#get_surname' do
     it 'should return a capitalize version of the given surname' do
       expect(subject.get_surname).to eq surname.capitalize
+    end
+  end
+
+  describe '#get_created' do
+    it 'should return the time and date of creation' do
+      time_created = Time.now
+      allow(Time).to receive(:now).and_return(time_created)
+      expect(subject.get_created).to eq time_created
     end
   end
 end
