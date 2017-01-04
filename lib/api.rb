@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'user.rb'
 
 class SUPAAPI < Sinatra::Base
   get '/' do
