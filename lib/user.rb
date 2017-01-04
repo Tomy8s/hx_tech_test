@@ -20,12 +20,12 @@ class User
 
   def display_json
     hash = {
-      id: get_id,
-      email: get_email,
-      forename: get_forename,
-      surname: get_surname,
-      created: get_created,
-      updated: get_updated
+      id: @id,
+      email: @email,
+      forename: @forename.capitalize,
+      surname: @surname.capitalize,
+      created: @created,
+      updated: @updated
     }
     hash.to_json
   end
@@ -33,25 +33,5 @@ class User
   def get_id
     return_id = @id
     return_id
-  end
-
-  def get_email
-    @email.dup
-  end
-
-  def get_forename
-    @forename.dup.capitalize
-  end
-
-  def get_surname
-    @surname.dup.capitalize
-  end
-
-  def get_created
-    @created.dup
-  end
-
-  def get_updated
-    @updated
   end
 end
