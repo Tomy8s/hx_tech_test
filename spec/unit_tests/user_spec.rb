@@ -64,4 +64,14 @@ describe User do
       expect(subject.get_surname).to eq new_surname.capitalize
     end
   end
+
+  describe '#get_updated' do
+    context 'not updated' do
+      it 'should return nil' do
+        time_updated = Time.now
+        allow(Time).to receive(:now).and_return(time_updated)
+        expect(subject.get_updated).to be nil
+      end
+    end
+  end
 end
