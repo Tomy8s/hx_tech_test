@@ -40,15 +40,6 @@ describe User do
   end
 
   describe '#update' do
-    it 'should update the id' do
-      new_id = rand 1000
-      subject.update({id: new_id})
-      expect(subject.get_id).to eq new_id
-      expect(subject.get_email).to eq email
-      expect(subject.get_forename).to eq forename.capitalize
-      expect(subject.get_surname).to eq surname.capitalize
-    end
-
     it 'should update the email' do
       new_email = 'test2@test2.com'
       subject.update({email: new_email})
