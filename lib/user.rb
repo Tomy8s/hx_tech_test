@@ -7,6 +7,7 @@ class User
     @email = user_data[:email]
     @forename = user_data[:forename]
     @surname = user_data[:surname]
+    @created = Time.now
   end
 
   def get_id
@@ -24,5 +25,9 @@ class User
 
   def get_surname
     @surname.dup.capitalize
+  end
+
+  def get_created
+    @created.dup
   end
 end
