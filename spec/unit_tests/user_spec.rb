@@ -81,7 +81,6 @@ describe User do
       expect(subject.get_forename).to eq forename.capitalize
       expect(subject.get_surname).to eq surname.capitalize
       expect(subject.get_updated).to eq time_updated
-      p subject
     end
   end
 
