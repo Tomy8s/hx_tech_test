@@ -11,7 +11,6 @@ class User
   end
 
   def update user_data
-    if user_data[:id] then @id = user_data[:id] end
     if user_data[:email] then @email = user_data[:email] end
     if user_data[:forename] then @forename = user_data[:forename] end
     if user_data[:surname] then @surname = user_data[:surname] end

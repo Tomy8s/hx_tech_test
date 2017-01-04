@@ -21,6 +21,24 @@ class SUPAAPI < Sinatra::Base
     end
   end
 
+  get '/update' do
+    if !params[:id]
+      'please specify an id'
+    else
+      Users.update_user(params)
+      redirect "/get?id=#{params[:id]}"
+    end
+  end
+
+  get '/delete' do
+    if !params[:id]
+      'please specify an id'
+    else
+      Users.delet_user(params)
+      redirect "/get?id=#{params[:id]}"
+    end
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
