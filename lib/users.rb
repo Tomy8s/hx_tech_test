@@ -4,8 +4,15 @@ class Users
     @@user_list << User.new(user_data)
   end
 
-  def self.return_user(index=0)
-    user = @@user_list[index]
-    user.display_json
+  def self.return_user(id=false)
+    if id
+      @@user_list.each do |u|
+        if u.get_id == id
+          return u.display_json
+        end
+      end
+    else
+      @@user_list.last.display_json
+    end
   end
 end

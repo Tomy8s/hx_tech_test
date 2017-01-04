@@ -14,7 +14,11 @@ class SUPAAPI < Sinatra::Base
   end
 
   get '/get' do
-    Users.return_user
+    if params[:id]
+      Users.return_user(params[:id].to_i)
+    else
+      Users.return_user
+    end
   end
 
   # start the server if ruby file executed directly
