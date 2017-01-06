@@ -2,7 +2,7 @@
 
 _pronounced as_ "super API"  
 
-Available at: <http://holiday-extras-api-tomy8s.herokuapp.com/>  
+Available at: <http://supaapi.herokuapp.com/>  
 
 ## What is it?
 

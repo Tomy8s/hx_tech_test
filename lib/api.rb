@@ -5,7 +5,7 @@ require_relative 'users.rb'
 
 class SUPAAPI < Sinatra::Base
   get '/' do
-    'SUPAAPI!'
+    '<a href="https://github.com/Tomy8s/SUPAAPI">Read me</a>'
   end
 
   get '/new' do
