@@ -21,7 +21,6 @@ class Users
   end
 
   def self.update_user(user_data)
-    p user_data[:id]
     @@user_list.each do |u|
       if u.get_id == user_data[:id].to_i
         return u.update(user_data)
